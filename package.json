@@ -9,11 +9,11 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "contributes": {
     "configuration": {
       "type": "object",
       "title": "マイ拡張機能の設定",
+      "preLaunchTask": null,
       "properties": {
         "myExtension.enabled": {
           "type": "boolean",
@@ -30,6 +30,31 @@
             "自動で切り替えます"
           ],
           "description": "動作モードを選択します。"
+        },
+        "myExtension.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "APIキーを入力してください。"
+        },
+        "myExtension.tax": {
+          "type": "number",
+          "default": 0.1
+        },
+        "myExtension.count": {
+          "type": "integer",
+          "default": 1
+        },
+        "myExtension.nullishItem": {
+          "type": "null"
+        },
+        "myExtension.enabledDays": {
+          "type": "array",
+          "description": "",
+          "items": {
+            "type": "string",
+            "enum": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+            "maxItems": 7
+          }
         }
       }
     }
