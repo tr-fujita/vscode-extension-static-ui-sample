@@ -108,7 +108,7 @@
 
 | type | UI | 備考 |
 | --- | --- | --- |
-| string | ![alt text](./img/03.png) | `"enum"`を併用すると、ドロップダウンリストが使える |
+| string | ![alt text](./img/03.png) | - |
 | number | ![alt text](./img/04.png) | 不動小数点を認める |
 | integer | ![alt text](./img/05.png) | 小数を認めない |
 | boolean | ![alt text](./img/06.png) | - |
