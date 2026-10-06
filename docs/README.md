@@ -46,6 +46,7 @@
   "configuration": {
     "type": "object",
     "title": "マイ拡張機能の設定",
+    "preLaunchTask": null,
     "properties": {
       "myExtension.enabled": {},
       "myExtension.mode": {}
@@ -98,3 +99,35 @@
 すると、以下のような設定が完成します。
 
 ![alt text](./img/02.png)
+
+---
+
+## typeと設定画面のUI
+
+`type`とUIの対応関係については以下の通りです。
+
+| type | UI | 備考 |
+| --- | --- | --- |
+| string | ![alt text](./img/03.png) | `"enum"`を併用すると、ドロップダウンリストが使える |
+| number | ![alt text](./img/04.png) | 不動小数点を認める |
+| integer | ![alt text](./img/05.png) | 小数を認めない |
+| boolean | ![alt text](./img/06.png) | - |
+| null | ![alt text](./img/07.png) | 明示的に値がないことを示す |
+|||
+| array | ![alt text](./img/08.png) | 上記の型を元に配列を作る |
+|||
+| object | ![alt text](./img/09.png) | `"properties"`で項目を定義して使う |
+
+
+## Union Type
+
+`type`に配列を当てると、Union Type が使えます。
+Union Type は、複数の型を許可します。
+
+```json
+"myExtension.timeout": {
+  "type": ["number", "null"],
+  "default": null,
+  "description": "タイムアウト秒数を指定します（未設定の場合は無制限）。"
+}
+```
